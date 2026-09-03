@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
   const single = mode === "single";
 
   return {
-    base: single ? "./" : "/japan-trip-control/",
+    base: single ? "./" : "/-tripcontrol1/",
     plugins: [
       react(),
       ...(single
@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
                 theme_color: "#f4f5f2",
                 background_color: "#f4f5f2",
                 display: "standalone",
-                start_url: "/japan-trip-control/",
+                start_url: "/-tripcontrol1/",
                 icons: [{ src: "favicon.svg", sizes: "any", type: "image/svg+xml", purpose: "any maskable" }]
               },
               workbox: {
