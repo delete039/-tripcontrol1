@@ -8,7 +8,7 @@ import type {
 
 export const tripMeta = {
   title: "东京与东北旅行",
-  subtitle: "东京购物、田代岛、乳头温泉与仙台",
+  subtitle: "东京购物、仙台与乳头温泉",
   startDate: "2026-10-03",
   endDate: "2026-10-08",
   travelers: 2,
@@ -97,9 +97,9 @@ export const tripDays: TripDay[] = [
     date: "2026-10-04",
     shortDate: "10/4",
     weekday: "周日",
-    city: "东京 → 仙台",
-    title: "涩谷购物",
-    subtitle: "SHIBUYA109、表参道炸猪排、东京站晚餐",
+    city: "东京",
+    title: "东京购物",
+    subtitle: "SHIBUYA109、表参道炸猪排、东京夜宿",
     imageKey: "shibuya",
     color: "#d9a228",
     route: [
@@ -107,7 +107,7 @@ export const tripDays: TripDay[] = [
       { lat: 35.6595, lng: 139.6987 },
       { lat: 35.6674, lng: 139.7111 },
       { lat: 35.6812, lng: 139.7671 },
-      { lat: 38.2601, lng: 140.8824 }
+      { lat: 35.6197, lng: 139.7286 }
     ],
     activities: [
       {
@@ -164,45 +164,34 @@ export const tripDays: TripDay[] = [
       {
         id: "d2-luggage",
         time: "16:10",
-        end: "17:25",
-        title: "返回大崎取行李，前往东京站",
-        detail: "使用 JR EAST PASS。东京站内预留找 Gransta 与新干线站台的时间。",
+        end: "17:00",
+        title: "返回大崎并整理购物物品",
+        detail: "不再赶当晚的新干线，返回酒店继续住宿。整理已经购买的衣服，保留第二天东京自由活动的机动性。",
         category: "rail",
-        coordinate: { lat: 35.6812, lng: 139.7671 }
+        coordinate: { lat: 35.6197, lng: 139.7286 }
       },
       {
         id: "d2-dinner",
         time: "18:00",
-        end: "19:05",
+        end: "19:30",
         title: "格之进汉堡肉",
         japanese: "格之進ハンバーグ＆バル",
-        detail: "店内用餐。主选金格汉堡肉，最晚 19:20 离店。餐厅位于东京站 Gransta B1 改札内。",
+        detail: "店内用餐。主选金格汉堡肉；现在不需要为新干线赶时间，可以根据当天体力决定是否前往。餐厅位于东京站 Gransta B1 改札内。",
         category: "meal",
         place: "东京站",
         coordinate: { lat: 35.6812, lng: 139.7671 },
         source: "https://www.gransta.jp/mall/gransta_tokyo/kakunoshin/"
       },
       {
-        id: "d2-shinkansen",
-        time: "20:16",
-        end: "21:47",
-        title: "东京 → 仙台",
-        detail: "东北新干线 Hayabusa 指定席，使用 JR EAST PASS。提前约 20 分钟到站台。",
-        category: "rail",
-        place: "东京站 → 仙台站",
-        coordinate: { lat: 38.2601, lng: 140.8824 },
-        editable: true
-      },
-      {
-        id: "d2-sendai-hotel",
-        time: "22:05",
-        end: "22:25",
-        title: "入住仙台御宿野乃",
-        japanese: "天然温泉 杜都の湯 御宿 野乃仙台",
-        detail: "不含早餐。之后连续入住，不每天搬行李。",
+        id: "d2-return-hotel",
+        time: "20:00",
+        end: "20:40",
+        title: "返回大崎酒店休息",
+        japanese: "ダイワロイネットホテル東京大崎",
+        detail: "乘 JR 返回大崎，继续住大崎大和 Roynet。无需当天搬行李，晚上可以整理衣物并为次日下午前往仙台留出余量。",
         category: "hotel",
-        place: "仙台御宿野乃天然温泉酒店",
-        coordinate: { lat: 38.2636, lng: 140.8757 }
+        place: "大崎大和ROYNET酒店",
+        coordinate: { lat: 35.6197, lng: 139.7286 }
       }
     ]
   },
@@ -210,96 +199,60 @@ export const tripDays: TripDay[] = [
     date: "2026-10-05",
     shortDate: "10/5",
     weekday: "周一",
-    city: "石卷・田代岛",
-    title: "田代岛猫岛",
-    subtitle: "最高优先级，但受检修船班和海况影响",
-    imageKey: "tashirojima",
-    color: "#2f7d65",
+    city: "东京 → 仙台",
+    title: "东京自由活动",
+    subtitle: "上午不设固定景点，下午按体力与购物进度弹性前往仙台",
+    imageKey: "tokyo",
+    color: "#c64b37",
     route: [
-      { lat: 38.2601, lng: 140.8824 },
-      { lat: 38.4345, lng: 141.3036 },
-      { lat: 38.2984, lng: 141.4169 },
-      { lat: 38.2868, lng: 141.4178 }
+      { lat: 35.6197, lng: 139.7286 },
+      { lat: 35.6595, lng: 139.6987 },
+      { lat: 35.6812, lng: 139.7671 },
+      { lat: 38.2601, lng: 140.8824 }
     ],
     activities: [
       {
-        id: "d3-depart",
-        time: "07:30",
-        end: "09:15",
-        title: "仙台 → 石卷",
-        detail: "便利店早餐，搭乘仙石东北线。具体车次与轮船衔接在 9 月底检修时刻表发布后锁定。",
-        category: "rail",
-        alert: "当前时间为规划窗口，不是最终车次。",
-        coordinate: { lat: 38.4345, lng: 141.3036 },
-        editable: true
-      },
-      {
-        id: "d3-ticket",
-        time: "09:15",
-        end: "09:50",
-        title: "步行至中央码头并购票",
-        detail: "船票不能预约、只收现金、先到先得。两人往返至少准备 ¥5,000 现金，所有乘客一起排队。",
-        category: "walk",
-        cost: "¥1,250/人/单程",
-        source: "https://www.ajishimaline.com/about.html"
-      },
-      {
-        id: "d3-ferry",
-        time: "待定",
-        end: "待定",
-        title: "石卷 → 仁斗田港",
-        detail: "2026 年 9 月末起使用检修特别时刻表，官网尚未公布最终班次。以出发前官方公告为准。",
-        category: "boat",
-        alert: "关键待复核项：船班可能临时停航或变更停靠港。",
-        coordinate: { lat: 38.2984, lng: 141.4169 },
-        source: "https://www.ajishimaline.com/pg117.html",
-        editable: true
-      },
-      {
-        id: "d3-island",
-        time: "约 11:00",
-        end: "14:40",
-        title: "田代岛步行游览",
-        detail: "仁斗田港、猫神社、岛之驿、漫画岛方向。不要喂猫；优先按返程船班倒推，不走过远。",
-        category: "visit",
-        place: "田代岛",
-        coordinate: { lat: 38.2868, lng: 141.4178 }
-      },
-      {
-        id: "d3-lunch",
-        time: "12:00",
-        end: "12:45",
-        title: "岛之驿午餐",
-        japanese: "田代島 島のえき",
-        detail: "主选轻食，10:00–15:00、不定休。岛上餐饮可能临时休息，随身带一份便利店备用食物。",
-        category: "meal",
-        source: "https://www.city.ishinomaki.lg.jp/cont/10053500/0050/3639/tashirojima.pdf"
-      },
-      {
-        id: "d3-coffee",
-        time: "13:00",
+        id: "d3-free-tokyo",
+        time: "09:30",
         end: "13:30",
-        title: "クロネコ堂咖啡",
-        detail: "营业时就去，若当天休息不绕路等待。",
-        category: "meal"
+        title: "东京自由活动与午餐",
+        detail: "不设固定景点。可以补逛 SHIBUYA109、Laforet，去咖啡店休息，或在大崎、涩谷一带轻松活动；午餐按当天想吃的内容决定。",
+        category: "buffer",
+        place: "东京市内",
+        coordinate: { lat: 35.6595, lng: 139.6987 },
+        editable: true
       },
       {
-        id: "d3-return",
-        time: "待定",
-        end: "约 18:10",
-        title: "田代岛 → 石卷 → 仙台",
-        detail: "返程船班是当天硬约束。回到石卷后使用 JR EAST PASS 返回仙台。",
-        category: "boat",
-        alert: "绝不能错过当日返程船。",
+        id: "d3-shinkansen",
+        time: "下午",
+        end: "傍晚",
+        title: "东京 → 仙台（弹性出发）",
+        detail: "不预设死车次。根据上午活动、购物整理、体力和晚餐安排，在下午选择合适的东北新干线，使用 JR EAST PASS。若保留牛舌料理阁预约，需要提前确认出发时间是否来得及；否则可以更晚出发。",
+        category: "rail",
+        place: "东京站 → 仙台站",
+        coordinate: { lat: 38.2601, lng: 140.8824 },
+        alert: "10/5 下午不设固定出发时刻，但要预留东京站进站、买饮料和寻找站台的时间。",
+        editable: true
+      },
+      {
+        id: "d3-sendai-hotel",
+        time: "傍晚",
+        end: "晚上",
+        title: "入住仙台御宿野乃",
+        japanese: "天然温泉 杜都の湯 御宿 野乃仙台",
+        detail: "把入住日从 10/4 改为 10/5。抵达后办理入住、放置购物行李，之后按实际抵达时间决定晚餐。",
+        category: "hotel",
+        place: "仙台御宿野乃天然温泉酒店",
+        coordinate: { lat: 38.2636, lng: 140.8757 },
         editable: true
       },
       {
         id: "d3-dinner",
         time: "19:00",
         end: "20:30",
-        title: "牛舌料理阁",
+        title: "牛舌料理阁（可选）",
         japanese: "牛たん料理 閣 ブランドーム本店",
-        detail: "预约两人。以烤牛舌定食和熟食为主，不安排牛舌刺身。",
+        detail: "先保留为可选晚餐，不作为 10/5 下午出发的硬约束。若保留预约，需根据东京自由活动和新干线出发时间确认；若想完全自由，可取消或改为仙台站附近临时用餐。以烤牛舌定食和熟食为主，不安排牛舌刺身。",
         category: "meal",
         place: "一番町",
         coordinate: { lat: 38.2617, lng: 140.8714 },
@@ -659,33 +612,16 @@ export const diningOptions: DiningOption[] = [
     url: "https://www.gransta.jp/mall/gransta_tokyo/kakunoshin/"
   },
   {
-    id: "island-station",
-    date: "10/5",
-    meal: "午餐",
-    name: "田代岛 岛之驿",
-    japanese: "田代島 島のえき",
-    role: "主选",
-    category: "岛上轻食",
-    price: "约 ¥800–1,500/人",
-    ratings: [{ provider: "食べログ", score: "3.11 · 20评", checked: "2026-08-28", url: "https://tabelog.com/miyagi/A0404/A040403/4026847/" }, { provider: "石卷市资料", score: "营业待复核", checked: "2026-08-28" }],
-    summary: "岛上最顺路的午餐点，营业与供应可能受当天情况影响。",
-    orders: ["当日热食", "饮料", "猫主题小物"],
-    caution: "务必携带便利店备用食物。",
-    imageKey: "tashirojima",
-    coordinate: { lat: 38.2868, lng: 141.4178 },
-    url: "https://www.city.ishinomaki.lg.jp/cont/10053500/0050/3639/tashirojima.pdf"
-  },
-  {
     id: "kaku",
     date: "10/5",
     meal: "晚餐",
     name: "牛舌料理阁",
     japanese: "牛たん料理 閣 ブランドーム本店",
-    role: "主选",
+    role: "可选",
     category: "牛舌",
     price: "约 ¥2,500–5,000/人",
     ratings: [{ provider: "食べログ", score: "3.75 · 2753评", checked: "2026-08-28", url: "https://tabelog.com/miyagi/A0401/A040101/4000039/" }, { provider: "工作日晚餐", score: "可预约", checked: "2026-08-28" }],
-    summary: "仙台代表性牛舌餐，重点安排烤牛舌与熟食。",
+    summary: "先保留为可选晚餐，不把它作为 10/5 下午出发的硬约束。",
     orders: ["牛舌烧定食", "牛舌炖煮", "尾汤"],
     caution: "不安排牛舌刺身。",
     imageKey: "gyutan",
@@ -828,18 +764,18 @@ export const reservationItems: ReservationItem[] = [
   {
     id: "hotel-tokyo",
     title: "大崎大和ROYNET酒店",
-    eventDate: "10/3–10/4",
+    eventDate: "10/3–10/5",
     status: "booked",
     priority: "high",
-    detail: "已预订，大床房，不含早餐。"
+    detail: "已预订 10/3 入住、10/5 退房；两人大床房，不含早餐。"
   },
   {
     id: "hotel-sendai",
     title: "仙台御宿野乃天然温泉酒店",
-    eventDate: "10/4–10/8",
+    eventDate: "10/5–10/8",
     status: "booked",
     priority: "high",
-    detail: "已预订，大床房，不含早餐。"
+    detail: "已预订 10/5 入住、10/8 退房；两人大床房，不含早餐，含天然温泉浴场。"
   },
   {
     id: "ponga-res",
@@ -865,12 +801,12 @@ export const reservationItems: ReservationItem[] = [
   {
     id: "train-tokyo-sendai",
     title: "东京 → 仙台 Hayabusa",
-    eventDate: "10/4",
-    dueDate: "9/4 北京时间 09:00",
-    time: "20:16–21:47",
-    status: "todo",
+    eventDate: "10/5",
+    dueDate: "出发前重新确认",
+    time: "下午弹性",
+    status: "verify",
     priority: "high",
-    detail: "购买通票时同步预约两人相邻普通车指定席。"
+    detail: "改为 10/5 下午从东京前往仙台，不规定死具体车次。若已预约 10/4，需要改签或取消；如果希望保留相邻指定席，按当天体力选择下午车次。"
   },
   {
     id: "kakunoshin-res",
@@ -879,28 +815,27 @@ export const reservationItems: ReservationItem[] = [
     time: "18:00",
     status: "not-needed",
     priority: "medium",
-    detail: "店铺当前不可预约。17:40 前到店排队，最晚 19:20 离店前往新干线。",
+    detail: "店铺当前不可预约。现在不受新干线限制，可按 10/4 当天体力决定是否前往。",
     url: "https://www.gransta.jp/mall/gransta_tokyo/kakunoshin/"
   },
   {
     id: "ferry-check",
-    title: "田代岛检修船班复核",
+    title: "田代岛与船班",
     eventDate: "10/5",
-    dueDate: "9月底",
-    status: "verify",
+    status: "not-needed",
     priority: "high",
-    detail: "特别时刻表尚未发布。无预约、只收现金、先到先得。",
+    detail: "已取消田代岛当天行程，不再需要复核船班或准备岛上安排。",
     url: "https://www.ajishimaline.com/pg117.html"
   },
   {
     id: "kaku-res",
     title: "牛舌料理阁",
     eventDate: "10/5",
-    dueDate: "建议提前 2–3 周",
-    time: "19:00",
-    status: "todo",
+    dueDate: "出发前决定",
+    time: "19:00（可选）",
+    status: "verify",
     priority: "high",
-    detail: "品牌店本店，工作日晚餐，两人。",
+    detail: "暂时保留为可选晚餐，不作为 10/5 下午出发硬约束。需要根据东京自由活动和新干线时间决定保留、改时或取消。",
     url: "https://gyutankaku.in/"
   },
   {
@@ -967,7 +902,6 @@ export const reservationItems: ReservationItem[] = [
     url: "https://www.keisei.co.jp/keisei/tetudou/skyliner/us/skyliner/purchase.php"
   }
 ];
-
 export const prepItems: PrepItem[] = [
   {
     id: "passport",
@@ -1012,10 +946,10 @@ export const prepItems: PrepItem[] = [
   {
     id: "offline-maps",
     group: "网络与手机",
-    title: "下载东京、仙台、石卷与田泽湖离线地图",
+    title: "下载东京、仙台与田泽湖离线地图",
     timing: "提前一周",
     priority: "medium",
-    detail: "同时截图酒店日文地址、田代岛码头和休暇村巴士站。"
+    detail: "同时截图两家酒店日文地址、东京站新干线区域和休暇村巴士站。"
   },
   {
     id: "payment",
@@ -1023,7 +957,7 @@ export const prepItems: PrepItem[] = [
     title: "准备银行卡、交通 IC 与日元现金",
     timing: "提前一周",
     priority: "high",
-    detail: "田代岛船票只收现金。两人至少单独留出 ¥10,000 小额现金，不与日常消费混用。"
+    detail: "取消田代岛后不再需要专门预留船票现金，但乳头温泉巴士、自动售货机和小额消费仍建议准备现金，并携带可境外使用的实体银行卡。"
   },
   {
     id: "pass-tickets",
@@ -1042,14 +976,6 @@ export const prepItems: PrepItem[] = [
     detail: "预约 Ponga、牛舌阁、三吉、仔虎；格之进不可预约，按 17:40 到店排队。候补餐厅不要同时占用预约。"
   },
   {
-    id: "ferry-weather",
-    group: "交通与预约",
-    title: "复核田代岛船班和海况",
-    timing: "9月底及出发前",
-    priority: "high",
-    detail: "必要时交换 10/5 田代岛与 10/6 乳头温泉的白天行程。"
-  },
-  {
     id: "clothes",
     group: "行李与衣物",
     title: "按东北初秋天气准备分层衣物",
@@ -1063,7 +989,7 @@ export const prepItems: PrepItem[] = [
     title: "准备温泉与岛上用品",
     timing: "出发前一天",
     priority: "medium",
-    detail: "小毛巾、替换袜子、防水袋、轻便雨具。不要携带大件行李上岛。"
+    detail: "小毛巾、替换袜子、防水袋、轻便雨具。乳头温泉当天只带轻便随身物品。"
   },
   {
     id: "medicine",
@@ -1071,7 +997,7 @@ export const prepItems: PrepItem[] = [
     title: "准备常用药与处方证明",
     timing: "提前一周",
     priority: "medium",
-    detail: "晕船药、肠胃药、止痛药和个人长期用药；核对日本入境限制。"
+    detail: "肠胃药、止痛药和个人长期用药；核对日本入境限制。"
   },
   {
     id: "power",
@@ -1107,13 +1033,13 @@ export const travelInfoSections: TravelInfoSection[] = [
       {
         label: "东京",
         value: "ダイワロイネットホテル東京大崎",
-        note: "大崎站附近，10/3 入住，10/4 退房，不含早餐。",
+        note: "大崎站附近，10/3 入住，10/5 退房（需追加一晚），不含早餐。",
         url: "https://www.daiwaroynet.jp/osaki/"
       },
       {
         label: "仙台",
         value: "天然温泉 杜都の湯 御宿 野乃仙台",
-        note: "10/4–10/8 连住，不含早餐。",
+        note: "10/5–10/8 连住（需改入住日），不含早餐。",
         url: "https://dormy-hotels.com/dormyinn/hotels/nono_sendai/"
       }
     ]
@@ -1125,7 +1051,6 @@ export const travelInfoSections: TravelInfoSection[] = [
       { label: "日本报警", value: "110" },
       { label: "急救与消防", value: "119" },
       { label: "JNTO 游客热线", value: "+81-50-3816-2787", note: "24小时，多语种旅游紧急支持。" },
-      { label: "网地岛航线", value: "0225-93-6125", note: "船班与运行状态咨询。" },
       { label: "羽后交通田泽湖营业所", value: "0187-43-1511", note: "乳头线巴士咨询。" },
       { label: "休暇村乳头温泉乡", value: "0187-46-2244" }
     ]
@@ -1137,7 +1062,6 @@ export const travelInfoSections: TravelInfoSection[] = [
       { label: "预约", value: "二名で予約しています。", note: "我们预约了两位。" },
       { label: "全熟", value: "生ものは避けたいです。よく火を通してください。", note: "想避开生食，请充分加热。" },
       { label: "行李寄存", value: "荷物を預かっていただけますか。", note: "可以帮忙寄存行李吗？" },
-      { label: "船班", value: "田代島行きの船は運航していますか。", note: "去田代岛的船正常运行吗？" },
       { label: "站台", value: "この電車は仙台に行きますか。", note: "这班车去仙台吗？" }
     ]
   },

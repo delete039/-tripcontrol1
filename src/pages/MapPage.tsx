@@ -7,7 +7,7 @@ import { useTrip } from "../TripContext";
 
 export function MapPage() {
   const { state } = useTrip();
-  const days = getDisplayedDays(state.swappedWeatherDays);
+  const days = getDisplayedDays();
   const day = days.find((item) => item.date === state.selectedDate) ?? days[0];
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<MapLibreMap | null>(null);

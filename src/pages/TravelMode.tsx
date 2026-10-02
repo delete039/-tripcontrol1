@@ -12,7 +12,7 @@ function minutes(value: string) {
 
 export function TravelMode() {
   const { state, japanDate, setSelectedDate, setManualTravelMode, toggleActivity } = useTrip();
-  const days = getDisplayedDays(state.swappedWeatherDays);
+  const days = getDisplayedDays();
 
   useEffect(() => {
     if (tripDays.some((day) => day.date === japanDate) && state.selectedDate !== japanDate) setSelectedDate(japanDate);

@@ -1,4 +1,4 @@
-import { ArrowRight, CalendarClock, CheckCircle2, CloudSun, RefreshCw, TicketCheck } from "lucide-react";
+import { ArrowRight, CalendarClock, CheckCircle2, CloudSun, TicketCheck } from "lucide-react";
 import { ActivityTimeline } from "../components/ActivityTimeline";
 import { DaySelector } from "../components/DaySelector";
 import { Photo } from "../components/Photo";
@@ -13,8 +13,8 @@ function daysUntilTrip() {
 }
 
 export function OverviewPage({ onOpenReservations, onOpenPrep }: { onOpenReservations: () => void; onOpenPrep: () => void }) {
-  const { state, setSelectedDate, toggleWeatherSwap } = useTrip();
-  const days = getDisplayedDays(state.swappedWeatherDays);
+  const { state, setSelectedDate } = useTrip();
+  const days = getDisplayedDays();
   const selected = days.find((day) => day.date === state.selectedDate) ?? days[0];
   const weatherPoint = selected.route[selected.route.length - 1];
   const weather = useWeather(selected.date, weatherPoint.lat, weatherPoint.lng);
@@ -52,17 +52,12 @@ export function OverviewPage({ onOpenReservations, onOpenPrep }: { onOpenReserva
         <aside className="dashboard-rail">
           <section className="rail-section">
             <header><div><span className="eyebrow">天气窗口</span><strong>{selected.city}</strong></div><CloudSun size={21} /></header>
-            {weather.state === "future" && <p>实时预报将在出发前约 16 天开放。田代岛当天仍以航运官网为准。</p>}
+            {weather.state === "future" && <p>实时预报将在出发前约 16 天开放。10/5 东京自由活动与下午进仙台按实际情况调整。</p>}
             {weather.state === "loading" && <p>正在读取最新天气...</p>}
             {weather.state === "ready" && <div className="weather-values"><strong>{weather.min}–{weather.max}°C</strong><span>降雨 {weather.precipitation}%</span><span>最大风速 {weather.wind} km/h</span></div>}
             {(weather.state === "offline" || weather.state === "error") && <p>当前无法读取在线天气，已保留离线行程。</p>}
           </section>
 
-          <section className="rail-section swap-section">
-            <header><div><span className="eyebrow">海况备选</span><strong>10/5 与 10/6</strong></div><RefreshCw size={21} /></header>
-            <p>{state.swappedWeatherDays ? "当前：10/5 乳头温泉，10/6 田代岛。" : "当前：10/5 田代岛，10/6 乳头温泉。"} 晚餐仍保留原日期。</p>
-            <button className="secondary-button full" onClick={toggleWeatherSwap}>交换两天白天行程</button>
-          </section>
 
           <section className="rail-section">
             <header><div><span className="eyebrow">下一批操作</span><strong>预约与复核</strong></div></header>
